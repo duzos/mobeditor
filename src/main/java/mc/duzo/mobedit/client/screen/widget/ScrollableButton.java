@@ -42,13 +42,12 @@ public class ScrollableButton extends ButtonWidget {
 	}
 
 	@Override
-	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+	protected void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
 		if (!this.visible) {
 			return;
 		}
 		this.hovered = clicked(mouseX, mouseY);
-		this.renderButton(context, mouseX, mouseY, delta);
-		// this.applyTooltip();
+		super.renderWidget(context, mouseX, mouseY, delta);
 	}
 
 	public static class Builder {

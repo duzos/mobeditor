@@ -55,7 +55,7 @@ public class MobEditorScreen extends Screen {
 
 		super.render(context, mouseX, mouseY, delta);
 
-		this.renderEntity(context);
+		this.renderEntity(context, mouseX, mouseY);
 
 		// this might cause lag
 		for (String name : this.editBoxes.keySet()) {
@@ -234,8 +234,11 @@ public class MobEditorScreen extends Screen {
 		return Registries.ENTITY_TYPE.size();
 	}
 
-	private void renderEntity(DrawContext context) {
-		InventoryScreen.drawEntity(context, ScreenHelper.getCentreX() + 128, ScreenHelper.getCentreY() - 16, 24, (float) 0f, (float) 0f, this.getSelectedEntity());
+	private void renderEntity(DrawContext context, float mouseX, float mouseY) {
+		int x = ScreenHelper.getCentreX() + 76;
+		int y = ScreenHelper.getCentreY() - 64;
+
+		InventoryScreen.drawEntity(context, x, y, x + 105, y + 49, 28, 0.0625F, mouseX, mouseY, this.getSelectedEntity());
 
 		ScreenHelper.renderWidthScaledText(
 				this.getSelectedEntity().getName().getString(),

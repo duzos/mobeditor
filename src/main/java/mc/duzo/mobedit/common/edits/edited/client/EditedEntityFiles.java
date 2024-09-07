@@ -29,7 +29,7 @@ public class EditedEntityFiles {
 
 		try {
 			for (String fileName : getFilesInPath(getSavePath(root))) {
-				File file = getSavePath(root).resolve(fileName).toFile();
+				Path file = getSavePath(root).resolve(fileName);
 				NbtCompound data = NbtIo.read(file);
 				if (data == null) continue;
 
@@ -44,7 +44,7 @@ public class EditedEntityFiles {
 	public void writeToFiles(Path root) {
 		try {
 			for (EditedEntity entity : this.list) {
-				NbtIo.write(entity.serialize(), getSavePath(root).resolve(entity.getUuid().toString() + ".dat").toFile());
+				NbtIo.write(entity.serialize(), getSavePath(root).resolve(entity.getUuid().toString() + ".dat"));
 			}
 		} catch (IOException e) {
 			MobEditMod.LOGGER.error("Failed to write edited entities", e);

@@ -4,7 +4,7 @@
 
 # Mob Editor
 
-### Tweak any mob's stats, drops, and effects — straight from a spawn egg.
+### Tweak any mob's stats, drops, and effects - straight from a spawn egg.
 
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-62B47A?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/duzos/mobeditor?style=for-the-badge)
